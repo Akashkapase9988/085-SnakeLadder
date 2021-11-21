@@ -10,12 +10,14 @@ namespace _085_SnakeLadder
             int   Start_Position = 0;
             int Current_Position = 0;
             int Winning_Position = 100;
+            int Dice_Count = 0;
           
             Random random = new Random();
 
 
             while (Current_Position != 100)
             {
+                Dice_Count++;
                 int Dice_No = random.Next(1, 7);
                 int Player_Choice = random.Next(1, 4);
                 Console.WriteLine("Player roll dice and dice no is :  " + "   " + Dice_No);
@@ -72,7 +74,10 @@ namespace _085_SnakeLadder
                         break;
 
                 }
+                Console.WriteLine("player roll dice " + "  " + Dice_Count + "  " + "th time  till now");
+               
             }
+            Console.WriteLine("player roll dice " + "  " + Dice_Count + "  " + "time for winning");
         }
     }
 }
