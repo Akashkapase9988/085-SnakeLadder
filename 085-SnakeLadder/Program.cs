@@ -14,7 +14,7 @@ namespace _085_SnakeLadder
             Random random = new Random();
 
 
-            while (Current_Position <= 100)
+            while (Current_Position != 100)
             {
                 int Dice_No = random.Next(1, 7);
                 int Player_Choice = random.Next(1, 4);
@@ -38,6 +38,15 @@ namespace _085_SnakeLadder
                     case 2:
                         Console.WriteLine("player is go for ladder");
                         Current_Position =Current_Position+ Dice_No;
+                        //
+                        // logic for if cuurent position go above 100 then abort play
+                        //
+
+                        if (Current_Position > 100)
+                        {
+                            Console.WriteLine("current position of player go above 100 so we can not go for next position");
+                            Current_Position -= Dice_No;
+                        }
                         Console.WriteLine("Current position of player is :" + "  " + Current_Position);
                         break;
 
